@@ -1,13 +1,23 @@
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
-  :root {
+  * {
     ----color-border-default: #ffffff;
   }
 }
 
 /* Light mode */
 @media (prefers-color-scheme: light) {
-  :root {
+  * {
     ----color-border-default: #1e1e1e;
   }
+}
+
+* {
+  background: red !important;
+}
+
+
+main {
+  font-family: "Atkinson Hyperlegible";
+
 }
