@@ -1,0 +1,38 @@
+:root {
+  --font: "Atkinson Hyperlegible";
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1e1e1e;
+    --text: #696969;
+  }
+}
+
+/* Light mode */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #FFFFFF;
+    --text: #1e1e1e;
+  }
+}
+
+/* Common styles */
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  padding: 2rem;
+
+  font-family: var(--font);
+  font-size: 1.5rem;
+}
+
+a {
+  color: orange;
+  text-decoration: underline;
+}
+
+comments {
+  background: red;
+}
