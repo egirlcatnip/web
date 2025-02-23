@@ -1,23 +1,19 @@
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
   * {
-    ----color-border-default: #ffffff;
+    --color-border-default: #ffffff;
   }
 }
 
 /* Light mode */
 @media (prefers-color-scheme: light) {
   * {
-    ----color-border-default: #1e1e1e;
+    --color-border-default: #1e1e1e;
   }
 }
 
-* {
-  background: red !important;
-}
-
-
 main {
   font-family: "Atkinson Hyperlegible";
+  background: red !important;
 
 }
