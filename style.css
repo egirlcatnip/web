@@ -9,6 +9,12 @@
   --text-dark: #ddd;
 }
 
+
+:root {
+  --bg: var(--bg-light);
+  --text: var(--text-light);
+}
+
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
@@ -24,6 +30,7 @@
     --text: var(--text-light);
   }
 }
+
 
 /* Common styles */
 body {
