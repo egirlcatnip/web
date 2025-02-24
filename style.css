@@ -37,7 +37,8 @@ body {
 
 }
 
-h1 {
+h1,
+h2 {
   margin: 0;
 }
 
@@ -63,15 +64,17 @@ accent {
 
 header {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
   white-space: nowrap;
+  gap: 16px;
+  align-items: center;
 }
 
-.row {
+row {
   display: flex;
-  align-items: center;
   gap: 16px;
+
 }
 
 hr {
@@ -96,10 +99,14 @@ button {
 }
 
 .flag {
-  border-radius: 8px;
   height: 64px;
+  border-radius: 8px;
 }
 
+.shark {
+  width: 126px;
+
+}
 
 /* Gallery layout */
 .gallery {
