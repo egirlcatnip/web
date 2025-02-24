@@ -5,6 +5,10 @@
   <meta charset="UTF-8" />
   <title>egirlcatnip</title>
   <link rel="stylesheet" href="style.css">
+
+  <!-- Gallery -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.0/simple-lightbox.min.css">
+  <!-- Font Import -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -14,23 +18,116 @@
 </head>
 
 <body>
-  <h1>Welcome to <a href="https://github.com/egirlcatnip/"> egirlcatnip</a>'s personal site</h1>
+
+  <header>
+    <img id="pfp" src="resources/pfp_crop.png" alt="Profile Picture">
+    <h1>egirlcatnip's personal site</h1>
+  </header>
+
+  <hr>
+
   <p>Here you can find all the information you need to know about me.</p>
 
   <h2>Who am I?</h2>
-  <p>I am a 19 year old student of computer science.
+  <p>I am a 19-year-old student of computer science at UPOL, Olomouc.</p>
+
+  <hr>
+
+  <h2>What do I like to do?</h2>
+  <p>I code in Rust, C, and C++.</p>
+  <p>I play video games.</p>
+  <p>I am interested in activism.</p>
+
+  <hr>
+
+  <h2>Tiny Gallery</h2>
+  <div class="gallery" id="gallery">
+    <!-- Gallery images will be loaded by JavaScript -->
+  </div>
+
+  <hr>
+
+  <h2>Leave a comment?</h2>
+
+  <!-- Giscus Comment Section -->
+  <script src="https://giscus.app/client.js" data-repo="egirlcatnip/egirlcatnip.github.io"
+    data-reactions-enabled="false" data-loading="lazy" data-theme="preferred_color_scheme" async></script>
+
+  <!-- SimpleLightbox JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.0/simple-lightbox.min.js"></script>
 
 
-  <h1>Leave a comment?</h1>
+  <script>
+    window.onload = function () {
+      const gallery = document.getElementById('gallery');
+      const imgFolder = '/img';
+
+      const imageNames = [
+        '1.png',
+        '2.png',
+        '3.png',
+        '4.png',
+      ];
+
+      imageNames.forEach((imageName) => {
+        const linkElement = document.createElement('a');
+        linkElement.href = imgFolder + '/' + imageName;
+        linkElement.classList.add('gallery-item');
+        linkElement.setAttribute('data-lightbox', 'gallery');
+
+        const imgElement = document.createElement('img');
+        imgElement.src = imgFolder + '/' + imageName;
+        imgElement.alt = `Gallery Image - ${imageName}`;
+        imgElement.classList.add('gallery-image');
+
+        linkElement.appendChild(imgElement);
+        gallery.appendChild(linkElement);
+      });
+
+      // Initialize SimpleLightbox
+      const lightbox = new SimpleLightbox('.gallery-item', {
+        nav: false,       // Show previous/next buttons
+        close: false,    // Hide close button
+        overlay: false,   // Dark background
+        spinner: false,  // Hide loading spinner
+        loop: true,      // Enable looping through images
+        docClose: true,  // Close on outside click
+        disableScroll: true, // Prevent background scrolling
+        animationSpeed: 400, // Smooth transition
+        scrollZoom: false,
+        swipeClose: false,
+        showCounter: false,
+        swipeTolerance: 20,
+      });
+
+
+      document.querySelector('.sl-image').addEventListener('mousedown', (e) => {
+        const imgElement = e.target; // Image being dragged
+
+        imgElement.style.cursor = 'grabbing'; // Change cursor to grabbing
+        let offsetX = e.clientX - imgElement.getBoundingClientRect().left;
+        let offsetY = e.clientY - imgElement.getBoundingClientRect().top;
+
+        const onMouseMove = (moveEvent) => {
+          imgElement.style.left = moveEvent.clientX - offsetX + 'px';
+          imgElement.style.top = moveEvent.clientY - offsetY + 'px';
+        };
+
+        const onMouseUp = () => {
+          imgElement.style.cursor = 'grab'; // Change cursor back to grab
+          document.removeEventListener('mousemove', onMouseMove);
+          document.removeEventListener('mouseup', onMouseUp);
+        };
+
+        document.addEventListener('mousemove', onMouseMove);
+        document.addEventListener('mouseup', onMouseUp);
+      });
+
+    };
+  </script>
+
+
 
 </body>
 
 </html>
-
-
-<script src="https://giscus.app/client.js" data-repo="egirlcatnip/egirlcatnip.github.io" data-repo-id="R_kgDON-Tggw"
-  data-category="General" data-category-id="DIC_kwDON-Tgg84CnQIG" data-mapping="pathname" data-reactions-enabled="0"
-  data-input-position="bottom"
-  data-theme="https://raw.githubusercontent.com/egirlcatnip/egirlcatnip.github.io/refs/heads/main/giscus.css"
-  data-lang="en" async>
-  </script>

@@ -6,7 +6,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #1e1e1e;
-    --text: #ffffff;
+    --text: #ddd;
   }
 }
 
@@ -33,6 +33,82 @@ a {
   text-decoration: underline;
 }
 
-comments {
-  background: red;
+
+
+space {
+  display: block;
+  margin-top: 36vh;
+  margin-bottom: 1vh;
+
+}
+
+hr {
+  display: block;
+  margin-bottom: 2vh;
+  background: linear-gradient(to right, orange, purple);
+  height: 4px;
+  border-radius: 4px;
+  border: none;
+}
+
+#pfp {
+  border-radius: 50%;
+  width: 4em;
+  position: relative;
+  float: left;
+  margin-right: 1em;
+  bottom: 1em;
+}
+
+#pfp:hover {
+  transform: scale(1.1);
+}
+
+/* Gallery layout */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  margin: 20px;
+}
+
+/* Image styling with a small hover effect */
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+}
+
+/* Zoom effect on hover */
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+
+
+.sl-wrapper {
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.sl-image>img {
+  border-radius: 8px;
+}
+
+
+.sl-prev,
+.sl-next {
+  color: white !important;
+  opacity: 1 !important;
+}
+
+.sl-prev:hover,
+.sl-next:hover {
+  color: orange !important;
+}
+
+.sl-image {
+  cursor: move;
 }
