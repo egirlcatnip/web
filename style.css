@@ -105,6 +105,7 @@ img {
 
 button {
   user-select: text;
+  padding: 0;
 }
 
 /* Gallery layout */
