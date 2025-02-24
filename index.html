@@ -64,7 +64,6 @@
     <h2>What do I like to do?</h2>
     <p>I code in Rust, C, and C++.</p>
     <p>I play video games.</p>
-    <p>I am interested in activism.</p>
   </section>
   <hr>
 
@@ -122,7 +121,7 @@
 
       // Initialize SimpleLightbox
       const lightbox = new SimpleLightbox('.gallery-item', {
-        nav: false,       // Show previous/next buttons
+        nav: true,       // Show previous/next buttons
         close: false,    // Hide close button
         overlay: false,   // Dark background
         spinner: false,  // Hide loading spinner
@@ -161,26 +160,6 @@
       });
 
     };
-  </script>
-
-
-  <!-- Copy text button -->
-  <script>
-    function copy(text) {
-      // Create a temporary input element to hold the text
-      const input = document.createElement('input');
-      document.body.appendChild(input);
-
-      // Set the value to the provided text
-      input.value = text;
-
-      // Select and copy the text
-      input.select();
-      document.execCommand('copy');
-
-      // Remove the temporary input element
-      document.body.removeChild(input);
-    }
   </script>
 
 
