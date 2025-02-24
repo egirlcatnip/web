@@ -20,19 +20,37 @@
 <body>
 
   <header>
-    <img id="pfp" src="resources/pfp_crop.png" alt="Profile Picture">
-    <h1>egirlcatnip's personal site</h1>
+    <img id="pfp" src="resources/pfp_crop.png">
+    <h1>
+      <button title="Click to copy" class="username link" onclick="copy('@girlcatnip')">@girlcatnip</button>'s personal
+      site <a title="Click to navigate" class="link" href="https://en.pronouns.page/@egirlcatnip">(she/her)</a>
+
+    </h1>
   </header>
 
+  <br>
   <hr>
-
-  <p>Here you can find all the information you need to know about me.</p>
 
   <h2>Who am I?</h2>
   <p>I am a 19-year-old student of computer science at UPOL, Olomouc.</p>
+  <p>I'm happily in a romantic relationsip with my girlfriend.</p>
+  <p>I am a technology enthusiast and a nerd.</p>
+  <p>I run Fedora and Windows 11.</p>
 
   <hr>
 
+  <h2>Where to find me?</h2>
+  <button title="Click to copy" class="link" onclick="copy('egirlcatnip')" href="">Generally @egirlcatnip</button>
+  <br>
+  <button title="Click to copy" class="link" onclick="copy('egirlcatnip@gmail.com')">egirlcatnip@gmail.com</button>
+  <br>
+  <br>
+  <a href="https://github.com/egirlcatnip" title="Click to navigate" class="link"> Github @egirlcatnip </a>
+  <br>
+  <a href="https://discord.com/users/244471710991122432" title="Click to navigate" class="link"> Discord @egirlcatnip
+  </a>
+
+  <hr>
   <h2>What do I like to do?</h2>
   <p>I code in Rust, C, and C++.</p>
   <p>I play video games.</p>
@@ -41,7 +59,7 @@
   <hr>
 
   <h2>Tiny Gallery</h2>
-  <div class="gallery" id="gallery">
+  <div class=" gallery" id="gallery">
     <!-- Gallery images will be loaded by JavaScript -->
   </div>
 
@@ -126,7 +144,23 @@
     };
   </script>
 
+  <script>
+    function copy(text) {
+      // Create a temporary input element to hold the text
+      const input = document.createElement('input');
+      document.body.appendChild(input);
 
+      // Set the value to the provided text
+      input.value = text;
+
+      // Select and copy the text
+      input.select();
+      document.execCommand('copy');
+
+      // Remove the temporary input element
+      document.body.removeChild(input);
+    }
+  </script>
 
 </body>
 
