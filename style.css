@@ -1,7 +1,8 @@
 :root {
-  --font: "Atkinson Hyperlegible Next, monospace";
+  --font: "Atkinson Hyperlegible Next";
   --orange: orange;
   --purple: purple;
+  --pink: lightpink;
   --bg-light: #ffffff;
   --bg-dark: #181820;
   --text-light: #181820;
@@ -17,7 +18,7 @@
 }
 
 /* Light mode */
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scme: light) {
   :root {
     --bg: var(--bg-light);
     --text: var(--text-light);
@@ -25,59 +26,53 @@
 }
 
 /* Common styles */
-* {
-  font-family: var(--font);
-}
-
 body {
+  font-family: var(--font);
+  font-size: var(--font-size);
   background-color: var(--bg);
   color: var(--text);
-  padding: 2rem;
-  font-size: 1.5rem;
+  padding: 32px;
+  font-size: 32px;
+  white-space: nowrap;
+
+}
+
+h1 {
+  margin: 0;
 }
 
 a,
 .link {
   color: var(--orange);
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: inherit;
-  font-weight: inherit;
-  text-decoration: none;
-
-}
-
-.username {
-  padding: 0;
-  text-decoration: none;
-  font-size: 2.9rem;
+  font-size: var(--font-size);
 }
 
 a:hover,
 .link:hover {
-  color: var(--purple);
+  color: var(--pink);
 }
 
-.tooltip {
-  visibility: hidden;
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.75);
-  color: white;
-  text-align: center;
-  border-radius: 5px;
-  padding: 5px 10px;
-  font-size: 12px;
-  white-space: nowrap;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
 
+.accent,
 accent {
   color: var(--orange);
+}
+
+.no_underline {
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  white-space: nowrap;
+}
+
+row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 hr {
@@ -90,23 +85,22 @@ hr {
   border: none;
 }
 
-#pfp {
-  border-radius: 50%;
-  width: 4em;
-  position: relative;
-  float: left;
-  margin-right: 1em;
-  bottom: 1em;
-}
-
 img {
   pointer-events: none;
+  user-select: none;
+
 }
 
 button {
   user-select: text;
   padding: 0;
 }
+
+.flag {
+  border-radius: 8px;
+  height: 64px;
+}
+
 
 /* Gallery layout */
 .gallery {
