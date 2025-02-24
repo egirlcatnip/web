@@ -52,7 +52,6 @@ a:hover,
   color: var(--pink);
 }
 
-
 .accent,
 accent {
   color: var(--orange);
@@ -69,7 +68,7 @@ header {
   white-space: nowrap;
 }
 
-row {
+.row {
   display: flex;
   align-items: center;
   gap: 16px;
