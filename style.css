@@ -1,10 +1,10 @@
 :root {
-  --font: "Atkinson Hyperlegible";
+  --font: "Atkinson Hyperlegible Next, monospace";
   --orange: orange;
   --purple: purple;
   --bg-light: #ffffff;
-  --bg-dark: #1e1e1e;
-  --text-light: #1e1e1e;
+  --bg-dark: #181820;
+  --text-light: #181820;
   --text-dark: #ddd;
 }
 
@@ -45,11 +45,6 @@ a,
   font-size: inherit;
   font-weight: inherit;
   text-decoration: none;
-
-}
-
-.underline {
-  text-decoration: underline;
 
 }
 
