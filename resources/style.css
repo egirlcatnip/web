@@ -48,7 +48,7 @@ body {
   background-color: var(--bg);
   color: var(--text);
   padding: 32px;
-  font-size: 1.6em;
+  font-size: 2em;
   white-space: nowrap;
 }
 
@@ -129,13 +129,30 @@ img {
 }
 
 .icon>img {
-  image-rendering: pixelated;
+  image-rendering: crisp-edges;
   transform: scale(1);
   transition: 0s;
 }
 
 .icon>img:hover {
   transform: scale(1.1);
+}
+
+.c88x31 {
+  display: flex;
+  user-select: none;
+  max-width: unset;
+  flex-wrap: wrap;
+  transform: scale(2);
+  transform-origin: left center;
+  image-rendering: crisp-edges;
+
+}
+
+
+.c88x31>a {
+  width: 88px;
+  height: 31px;
 }
 
 /* Gallery layout */
