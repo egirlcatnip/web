@@ -1,26 +1,21 @@
-function calculateAge(birthDate) {
-  const today = new Date();
-  let age = today.getFullYear() - birthDate.getFullYear();
-  const month = today.getMonth();
-  const day = today.getDate();
+window.onload = function () {
+  const year = 2005;
+  const month = 4;
+  const day = 29;
 
-  if (month < birthDate.getMonth() || (month === birthDate.getMonth() && day < birthDate.getDate())) {
+  const birthDate = new Date(year, month + 1, day);
+  const today = new Date();
+
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const currentMonth = today.getMonth();
+  const currentDay = today.getDate();
+
+  if (currentMonth < birthDate.getMonth() || (currentMonth === birthDate.getMonth() && currentDay < birthDate.getDate())) {
     age--;
   }
-  return age;
-}
-
-
-
-function applyAge(year, month, day) {
-  const birthDate = new Date(year, month, day);
-  const age = calculateAge(birthDate);
 
   const dobFormatted = `${birthDate.getDate()}. ${birthDate.getMonth()}. ${birthDate.getFullYear()}`;
 
-  const ageElement = document.getElementById("age");
-  const dobElement = document.getElementById("dob");
-
-  ageElement.textContent = age;
-  dobElement.textContent = ` (${dobFormatted})`;
-}
+  document.getElementById("age").textContent = age;
+  document.getElementById("dob").textContent = ` (${dobFormatted})`;
+};

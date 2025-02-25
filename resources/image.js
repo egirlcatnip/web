@@ -482,3 +482,8 @@
   styleInject(css);
   return mediumZoom;
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  mediumZoom("gallery img", { margin: 20 });
+});
