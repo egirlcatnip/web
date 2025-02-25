@@ -1,17 +1,26 @@
 window.onload = function () {
-  const favicons = [
-    "resources/hearts/bi.png",
-    "resources/hearts/lesbian.png",
-    "resources/hearts/rainbow.png",
-    "resources/hearts/sapphic.png",
-    "resources/hearts/trans.png",
-    "resources/hearts/transfemminine.png",
+  const cycle_enabled = true;
 
-  ];
-  const randomFavicon = favicons[Math.floor(Math.random() * favicons.length)];
+  if (cycle_enabled) {
+    const favicons = [
+      "resources/hearts/rainbow.png",
+      "resources/hearts/trans.png",
+      "resources/hearts/lesbian.png",
+      "resources/hearts/bi.png",
+      "resources/hearts/sapphic.png",
+    ];
+    let index = 0;
 
-  let link = document.querySelector("link[rel='icon']") || document.createElement("link");
-  link.rel = "icon";
-  link.href = randomFavicon;
-  document.head.appendChild(link);
+    function changeFavicon() {
+      let link = document.querySelector("link[rel='icon']") || document.createElement("link");
+      link.rel = "icon";
+      link.href = favicons[index];
+      document.head.appendChild(link);
+      index = (index + 1) % favicons.length;
+    }
+
+    changeFavicon();
+
+    setInterval(changeFavicon, 10000);
+  }
 };

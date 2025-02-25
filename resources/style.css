@@ -7,6 +7,9 @@
   --bg-dark: #181820;
   --text-light: #181820;
   --text-dark: #ddd;
+
+  --accent: var(--orange);
+  --secondary: var(--pink);
 }
 
 
@@ -51,19 +54,19 @@ h2 {
 
 a,
 .link {
-  color: var(--orange);
+  color: var(--accent);
   font-size: var(--font-size);
 }
 
 a:hover,
 .link:hover {
-  color: var(--pink);
+  color: var(--secondary);
   transition: 0.1s;
 }
 
 .accent,
 accent {
-  color: var(--orange);
+  color: var(--accent);
 }
 
 .no_underline {
@@ -92,6 +95,7 @@ row {
   gap: 16px;
 }
 
+
 hr {
   display: block;
   margin-top: 2vh;
@@ -119,20 +123,23 @@ img {
 /* Gallery layout */
 gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 15px;
-  margin: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 16px;
+  margin: 16px;
+}
+
+gallery>img {
+  border-radius: 8px !important;
 }
 
 gallery img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
   pointer-events: all;
 }
 
 .medium-zoom-overlay {
-  background: rgba(0, 0, 0, 0.4) !important;
+  background: #00000064 !important;
 }
 
 .medium-zoom-image {
