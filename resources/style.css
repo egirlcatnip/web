@@ -140,19 +140,20 @@ img {
 
 .c88x31 {
   display: flex;
-  user-select: none;
-  max-width: unset;
   flex-wrap: wrap;
-  transform: scale(2);
   transform-origin: left center;
   image-rendering: crisp-edges;
-
+  align-items: center;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
+.c88x31 {
+  transform: scale(2);
+}
 
-.c88x31>a {
-  width: 88px;
-  height: 31px;
+.c88x31>img {
+  height: 100%;
 }
 
 /* Gallery layout */
