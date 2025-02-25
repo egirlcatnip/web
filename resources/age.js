@@ -1,21 +1,44 @@
-window.onload = function () {
-  const year = 2005;
-  const month = 4;
-  const day = 29;
-
-  const birthDate = new Date(year, month + 1, day);
+function calculateAge(birthDate) {
   const today = new Date();
+  const birthYear = birthDate.getFullYear();
+  const birthMonth = birthDate.getMonth();
+  const birthDay = birthDate.getDate();
 
-  let age = today.getFullYear() - birthDate.getFullYear();
-  const currentMonth = today.getMonth();
-  const currentDay = today.getDate();
+  let age = today.getFullYear() - birthYear;
 
-  if (currentMonth < birthDate.getMonth() || (currentMonth === birthDate.getMonth() && currentDay < birthDate.getDate())) {
+  const currentYearBirthday = new Date(today.getFullYear(), birthMonth, birthDay);
+  const daysInYear = (today.getFullYear() % 4 === 0 && today.getFullYear() % 100 !== 0) || (today.getFullYear() % 400 === 0) ? 366 : 365;
+  const daysSinceBirthday = (today - currentYearBirthday) / (1000 * 60 * 60 * 24);
+
+  if (daysSinceBirthday < 0) {
     age--;
+    const previousYearBirthday = new Date(today.getFullYear() - 1, birthMonth, birthDay);
+    const daysSincePreviousBirthday = (today - previousYearBirthday) / (1000 * 60 * 60 * 24);
+    age += daysSincePreviousBirthday / daysInYear;
+  } else {
+    age += daysSinceBirthday / daysInYear;
   }
 
-  const dobFormatted = `${birthDate.getDate()}. ${birthDate.getMonth()}. ${birthDate.getFullYear()}`;
+  return age.toFixed(1);
+}
 
-  document.getElementById("age").textContent = age;
-  document.getElementById("dob").textContent = ` (${dobFormatted})`;
-};
+function applyAge(year, month, day) {
+  const birthDate = new Date(year, month - 1, day);
+  const age = calculateAge(birthDate);
+
+  const monthNames = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+  ];
+  const dobFormatted = `${birthDate.getDate()} ${monthNames[birthDate.getMonth()]} ${birthDate.getFullYear()}`;
+
+  const ageElement = document.getElementById("age");
+  const dobElement = document.getElementById("dob");
+
+  ageElement.textContent = age;
+  dobElement.textContent = ` (${dobFormatted})`;
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  applyAge(2005, 4, 29);
+});
