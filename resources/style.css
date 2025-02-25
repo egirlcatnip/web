@@ -39,7 +39,7 @@ body {
   background-color: var(--bg);
   color: var(--text);
   padding: 32px;
-  font-size: 32px;
+  font-size: 1.6em;
   white-space: nowrap;
 
 }
@@ -58,6 +58,7 @@ a,
 a:hover,
 .link:hover {
   color: var(--pink);
+  transition: 0.1s;
 }
 
 .accent,
@@ -67,6 +68,14 @@ accent {
 
 .no_underline {
   text-decoration: none;
+}
+
+.no_select {
+  user-select: none;
+}
+
+.underline {
+  text-decoration: underline;
 }
 
 header {
@@ -81,7 +90,6 @@ header {
 row {
   display: flex;
   gap: 16px;
-
 }
 
 hr {
@@ -95,66 +103,56 @@ hr {
 }
 
 img {
-  pointer-events: none;
   user-select: none;
-
 }
 
-button {
-  user-select: text;
-  padding: 0;
+.icon>img {
+  image-rendering: pixelated;
+  transform: scale(1);
+  transition: 0s;
 }
 
-.flag {
-  height: 64px;
-  border-radius: 8px;
-}
-
-.shark {
-  width: 126px;
-
+.icon>img:hover {
+  transform: scale(1.1);
 }
 
 /* Gallery layout */
-.gallery {
+gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 15px;
   margin: 20px;
 }
 
-.gallery img {
+gallery img {
   width: 100%;
   height: auto;
   border-radius: 8px;
+  pointer-events: all;
+}
+
+.medium-zoom-overlay {
+  background: rgba(0, 0, 0, 0.4) !important;
+}
+
+.medium-zoom-image {
+  border-radius: 2px;
+}
+
+#age {
   cursor: pointer;
-  transition: transform 0.1s ease-in-out;
+  text-decoration: underline;
 }
 
-.gallery img:hover {
-  transform: scale(1.05);
+#age+#dob {
+  display: none;
+  color: var(--text);
 }
 
-.sl-wrapper {
-  backdrop-filter: blur(10px);
-  background-color: rgba(0, 0, 0, 0.5);
+#age:hover+#dob {
+  display: inline;
 }
 
-.sl-image>img {
-  border-radius: 8px;
-}
-
-.sl-prev,
-.sl-next {
-  color: white !important;
-  opacity: 1 !important;
-}
-
-.sl-prev:hover,
-.sl-next:hover {
-  color: var(--orange) !important;
-}
-
-.sl-image {
-  cursor: move;
+#name:hover {
+  content: " <3"
 }

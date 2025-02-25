@@ -3,33 +3,37 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>egirlcatnip</title>
+
+  <!-- Meta Tags -->
+  <title>@egirlcatnip</title>
+  <meta name="author" content="@egirlcatnip" />
+  <link rel="icon" href="resources/hearts/rainbow.png" type="image/x-icon">
+
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="resources/style.css" />
+
   <!-- Gallery -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.0/simple-lightbox.min.css">
+  <script src="resources/image.js"></script>
+
+  <!-- Age -->
+  <script src="resources/age.js"></script>
+
   <!-- Font Import -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap"
-    rel="stylesheet">
+  <link href="resources/font.css" rel="stylesheet">
 
 </head>
 
 <body>
 
   <header>
-    <h1>
-      <accent>egirlcatnip</accent>'s site
-    </h1>
+    <h1 class="accent underline">egirlcatnip</h1>
     <h1>(she/her)</h1>
-    <row>
-      <img src="resources/trans.png" class="flag">
-      <img src="resources/lesbian.png" class="flag">
-      <img src="resources/shark.png" class="shark">
+    <row class="icon">
+      <img src="resources/hearts/rainbow.png">
+      <img src="resources/hearts/trans.png">
+      <img src="resources/hearts/lesbian.png">
+      <img src="resources/hearts/sapphic.png">
     </row>
-
   </header>
 
   <hr>
@@ -37,15 +41,20 @@
   <section>
     <h2>Who am I?</h2>
     <p>
-      I am a 19-year-old student
+      I am a <span id="age" class="link"></span><span id="dob"></span>
+      year-old student.
       <br>
-      Computer science at UPOL, Olomouc.
+      I study computer science at <a href="https://www.inf.upol.cz/">UPOL</a>, Olomouc.
       <br>
-      I also go by Emily, Millie or Emi.
+      I also go by Emily, Millie or Emi. &lt;3
       <br>
       I am a technology enthusiast and a nerd.
       <br>
-      I am in a sapphic relationship.
+      I am into retro aesthetics and the
+      <a href="https://youtube.com/playlist?list=PL8mG-RkN2uTw7PhlnAr4pZZz2QubIbujH&si=dgG-0c1RmhKCY6b8">
+        WAN show</a>.
+      <br>
+      I am in a <a href="https://en.wikipedia.org/wiki/Sapphism"> sapphic</a> relationship.
     </p>
   </section>
 
@@ -86,16 +95,22 @@
 
   <section>
     <h2>Gallery</h2>
-    <div class=" gallery" id="gallery">
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.0/simple-lightbox.min.js"></script>
-    </div>
+    <gallery>
+      <img src="img/looking.png">
+      <img src="img/peak-night.png">
+      <img src="img/peak-day.png">
+      <img src="img/peak-alt.png">
+      <img src="img/bee.png">
+      <img src="img/sheep.png">
+      <img src="img/trees.png">
+      <img src="img/jwst-tarantula.png">
+    </gallery>
   </section>
 
   <hr>
 
   <section>
     <h2>Leave a comment?</h2>
-    <!-- Comment Section -->
     <script src="https://giscus.app/client.js" data-repo="egirlcatnip/egirlcatnip.github.io" data-repo-id="R_kgDON-Tggw"
       data-category="General" data-category-id="DIC_kwDON-Tgg84CnQIG" data-mapping="url" data-strict="0"
       data-reactions-enabled="0" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme"
@@ -106,85 +121,17 @@
   <hr>
 
   <footer>
-    <p> @egirlcatnip 2025, v1.1 </p>
-    <img
-      src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fegirlcatnip.github.io%2F&labelColor=%23181820&countColor=%23ffa500&style=flat&labelStyle=none" />
-
+    <p> @egirlcatnip 2025, v1.2 </p>
   </footer>
 </body>
 
 </html>
 
+
 <script>
-  window.onload = function () {
-    const gallery = document.getElementById('gallery');
-    const imgFolder = '/img';
+  document.addEventListener("DOMContentLoaded", function () {
+    mediumZoom("gallery img", { margin: 20 });
+    applyAge(2005, 4, 29);
+  });
 
-    const imageNames = [
-      'looking.png',
-      'peak-day.png',
-      'peak-night.png',
-      'peak-alt.png',
-      'trees.png',
-      'sheep.png',
-      'bee.png',
-      'jwst-tarantula.png',
-    ];
-
-    imageNames.forEach((imageName) => {
-      const linkElement = document.createElement('a');
-      linkElement.href = imgFolder + '/' + imageName;
-      linkElement.classList.add('gallery-item');
-      linkElement.setAttribute('data-lightbox', 'gallery');
-
-      const imgElement = document.createElement('img');
-      imgElement.src = imgFolder + '/' + imageName;
-      imgElement.alt = `Gallery Image - ${imageName}`;
-      imgElement.classList.add('gallery-image');
-
-      linkElement.appendChild(imgElement);
-      gallery.appendChild(linkElement);
-    });
-
-    // Initialize SimpleLightbox
-    const lightbox = new SimpleLightbox('.gallery-item', {
-      nav: true,       // Show previous/next buttons
-      close: false,    // Hide close button
-      overlay: false,   // Dark background
-      spinner: false,  // Hide loading spinner
-      loop: true,      // Enable looping through images
-      docClose: true,  // Close on outside click
-      disableScroll: true, // Prevent background scrolling
-      animationSpeed: 400, // Smooth transition
-      scrollZoom: false,
-      swipeClose: false,
-      showCounter: false,
-      swipeTolerance: 20,
-
-    });
-
-
-    document.querySelector('.sl-image').addEventListener('mousedown', (e) => {
-      const imgElement = e.target; // Image being dragged
-
-      imgElement.style.cursor = 'grabbing'; // Change cursor to grabbing
-      let offsetX = e.clientX - imgElement.getBoundingClientRect().left;
-      let offsetY = e.clientY - imgElement.getBoundingClientRect().top;
-
-      const onMouseMove = (moveEvent) => {
-        imgElement.style.left = moveEvent.clientX - offsetX + 'px';
-        imgElement.style.top = moveEvent.clientY - offsetY + 'px';
-      };
-
-      const onMouseUp = () => {
-        imgElement.style.cursor = 'grab'; // Change cursor back to grab
-        document.removeEventListener('mousemove', onMouseMove);
-        document.removeEventListener('mouseup', onMouseUp);
-      };
-
-      document.addEventListener('mousemove', onMouseMove);
-      document.addEventListener('mouseup', onMouseUp);
-    });
-
-  };
 </script>
