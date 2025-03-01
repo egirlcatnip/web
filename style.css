@@ -67,7 +67,7 @@ h2 {
 a,
 .link {
   color: var(--accent);
-  font-size: var(--font-size);
+  text-decoration: underline
 }
 
 a:hover,
@@ -80,8 +80,8 @@ a:hover,
   color: var(--accent);
 }
 
-.underline {
-  text-decoration: underline;
+.no-underline {
+  text-decoration: none;
 }
 
 header {
