@@ -15,6 +15,10 @@
   <!-- Font Import -->
   <link rel="stylesheet" href="font.css">
 
+  <!-- Font preload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <!-- Gallery -->
   <script src="resources/image.js"></script>
 
@@ -52,15 +56,13 @@
       <h2>Who am I?</h2>
       <p>
         I am a <span id="age" class="link"></span>
-        year-old student.
-        <br>
-        I study computer science at <a href="https://www.inf.upol.cz/">UPOL</a>, Olomouc.
-        <br>
-        I also go by Emily, Millie or Emi. &lt;3
-        <br>
-        I am a technology enthusiast and a nerd.
-        <br>
-        I am in a <a href="https://en.wikipedia.org/wiki/Sapphism"> sapphic</a> relationship.
+        year-old student.<br>
+        I also go by Emily, Millie or Emi.<br>
+        I study computer science at <a class="link" title="  Click to navigate  "
+          href="https://www.inf.upol.cz/">UPOL</a>, Olomouc.<br>
+        I am a technology enthusiast and a nerd.<br>
+        I am in a <a class="link" title="  Click to navigate  " href="https://en.wikipedia.org/wiki/Sapphism">
+          sapphic</a> relationship.
       </p>
     </section>
 
@@ -69,14 +71,12 @@
     <section>
       <h2>Where to find me?</h2>
       <p>
-        <a href="mailto:egirlcatnip@gmail.com" title="Click to mail" class="link">
-          egirlcatnip@gmail.com </a>
-        <br>
-        <a href="https://github.com/egirlcatnip" title="Click to navigate" class="link">
-          github.com/egirlcatnip </a>
-        <br>
-        <a href="https://discord.com/users/244471710991122432" title="Click to navigate" class="link">
-          discord.com/users/egirlcatnip </a>
+        <a class="link" title="  Click to mail  " href="mailto:egirlcatnip@gmail.com">
+          egirlcatnip@gmail.com</a><br>
+        <a class="link" title="  Click to navigate  " href="https://github.com/egirlcatnip">
+          github.com/egirlcatnip</a><br>
+        <a class="link" title="  Click to navigate  " href="https://discord.com/users/egirlcatnip">
+          discord.com/users/egirlcatnip</a><br>
       </p>
     </section>
 
@@ -85,19 +85,15 @@
     <section>
       <h2>What do I like to do?</h2>
       <p>
-        I code in rust, C, and C++.
-        <br>
-        I play video games like Minecraft and The Binding of Isaac.
-        <br>
-        I am an amateur musician and pianist.
-        <br>
-        I love to read fantasy novels.
-        <br>
-        I love to customize all customizable.
-        <br>
-        I am enjoy watching the
-        <a href="https://youtube.com/playlist?list=PL8mG-RkN2uTw7PhlnAr4pZZz2QubIbujH&si=dgG-0c1RmhKCY6b8">
-          WAN show</a>.
+        I code in rust, C, and C++.<br>
+        I love to read fantasy novels.<br>
+        I am an amateur musician and pianist.<br>
+        I love to customize all customizable.<br>
+        I play games like Minecraft and The Binding of Isaac.<br>
+        I enjoy watching the
+        <a title="Click to navigate"
+          href="https://youtube.com/playlist?list=PL8mG-RkN2uTw7PhlnAr4pZZz2QubIbujH&si=dgG-0c1RmhKCY6b8">
+          WAN show</a> weekly.<br>
       </p>
     </section>
 
@@ -106,14 +102,13 @@
     <section>
       <h2>Gallery</h2>
       <gallery>
-        <img src="img/looking.png">
-        <img src="img/peak-night.png">
-        <img src="img/peak-day.png">
-        <img src="img/peak-alt.png">
-        <img src="img/bee.png">
-        <img src="img/sheep.png">
-        <img src="img/trees.png">
-        <img src="img/jwst-tarantula.png">
+        <img title="My minecraft skin" src="resources/img/looking.png">
+        <img title="A peak" src="resources/img/peak-night.png">
+        <img title="Bzzz" src="resources/img/bee.png">
+        <img title="Bee" src="resources/img/sheep.png">
+        <img title="Some trees" src="resources/img/trees.png">
+        <img title="JWST | Tarantula Nebula" src="resources/img/jwst-tarantula.png">
+        <img title="JWST | Carina Nebula" src="resources/img/jwst-carina.png">
       </gallery>
     </section>
 
@@ -150,7 +145,6 @@
 </body>
 
 </html>
-
 
 <script>
   console.log(`Welcome to my personal site!`);
