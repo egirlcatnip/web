@@ -20,19 +20,19 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <!-- Gallery -->
-  <script src="resources/image.js"></script>
+  <script src="resources/scripts/image.js"></script>
 
   <!-- Age -->
-  <script src="resources/age.js"></script>
+  <script src="resources/scripts/age.js"></script>
 
   <!-- Version -->
-  <script src="resources/version.js"></script>
+  <script src="resources/scripts/version.js"></script>
 
   <!-- Favicon -->
-  <script src="resources/favicon.js"></script>
+  <script src="resources/scripts/favicon.js"></script>
 
   <!-- Kitty -->
-  <script src="resources/oneko.js"></script>
+  <script src="resources/scripts/oneko.js"></script>
 
 </head>
 
@@ -127,17 +127,16 @@
 
     <section>
       <row class="c88x31">
-        <img src="resources/c88x31/privacy.gif">
-        <img src="resources/c88x31/estrogen.gif">
-        <img src="resources/c88x31/trans.png">
-        <img src=" resources/c88x31/ubo.png">
-        <img src="resources/c88x31/github.png">
-        <img src="resources/c88x31/codium.png">
+        <img src="resources/88x31/privacy.gif">
+        <img src="resources/88x31/estrogen.gif">
+        <img src="resources/88x31/trans.png">
+        <img src="resources/88x31/ubo.png">
+        <img src="resources/88x31/github.png">
+        <img src="resources/88x31/codium.png">
       </row>
     </section>
 
   </main>
-
 
   <footer>
     <p>@egirlcatnip 2025, <span id="version" class="link"></span></p>
@@ -150,5 +149,13 @@
   console.log(`Welcome to my personal site!`);
   console.log(`I'm afraid you wont find much of interest here..`);
   console.log(`Have a heart: ❤️`);
+
+  window.onload = function () {
+    image();
+    age();
+    version();
+    favicon();
+    oneko();
+  }
 
 </script>

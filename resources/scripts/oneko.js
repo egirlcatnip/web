@@ -289,6 +289,3 @@ function oneko() {
 };
 
 
-window.onload = function () {
-  oneko();
-}

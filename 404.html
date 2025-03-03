@@ -10,26 +10,30 @@
   <link rel="icon" href="resources/hearts/rainbow.png" type="image/x-icon">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="resources/style.css" />
+  <link rel="stylesheet" href="style.css" />
 
-  <!-- Gallery -->
-  <script src="resources/image.js"></script>
+  <!-- Font Import -->
+  <link rel="stylesheet" href="font.css">
 
-  <!-- Age -->
-  <script src="resources/age.js"></script>
+  <!-- Font preload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Version -->
+  <script src="resources/version.js"></script>
 
   <!-- Favicon -->
   <script src="resources/favicon.js"></script>
 
-  <!-- Font Import -->
-  <link href="resources/font.css" rel="stylesheet">
+  <!-- Kitty -->
+  <script src="resources/oneko.js"></script>
 
 </head>
 
 <body>
 
   <header>
-    <h1 class="accent underline">egirlcatnip</h1>
+    <h1 class="link">egirlcatnip</h1>
     <h1>(she/her)</h1>
     <row class="icon">
       <img src="resources/hearts/rainbow.png">
@@ -58,7 +62,7 @@
 
   <footer>
     <hr>
-    <p> @egirlcatnip 2025, v1.3 </p>
+    <p>@egirlcatnip 2025, <span id="version" class="link"></span></p>
   </footer>
 </body>
 
@@ -69,5 +73,4 @@
   console.log(`Welcome to my personal site!`);
   console.log(`I'm afraid you wont find much of interest here..`);
   console.log(`Have a heart: ❤️`);
-
 </script>

@@ -1,4 +1,4 @@
-window.onload = function () {
+function favicon() {
   const cycle_enabled = true;
 
   if (cycle_enabled) {
@@ -24,3 +24,7 @@ window.onload = function () {
     setInterval(changeFavicon, 10000);
   }
 };
+
+window.onload = function () {
+  favicon();
+}

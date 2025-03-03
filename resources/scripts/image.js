@@ -484,6 +484,7 @@
 });
 
 
-document.addEventListener("DOMContentLoaded", function () {
+
+function image() {
   mediumZoom("gallery img", { margin: 20 });
-});
+}

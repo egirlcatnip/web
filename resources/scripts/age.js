@@ -1,5 +1,5 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const birthDate = new Date(2005, 3, 29);
+function age() {
+  const birthDate = new Date(2005, 3, 29); // April is month 3 (zero-indexed)
   const span = document.getElementById("age");
 
   if (span) {
@@ -28,4 +28,5 @@ document.addEventListener("DOMContentLoaded", function () {
       if (dateSpan) dateSpan.remove();
     });
   }
-});
+}
+

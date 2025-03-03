@@ -1,11 +1,10 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const versionDate = new Date(2025, 3, 2);
+function version() {
+  const versionDate = new Date(2025, 3, 3);
   const version = "v1.6";
 
   const span = document.getElementById("version");
 
   if (span) {
-
     span.textContent = version;
 
     span.addEventListener("mouseenter", function () {
@@ -22,4 +21,4 @@ document.addEventListener("DOMContentLoaded", function () {
       if (dateSpan) dateSpan.remove();
     });
   }
-});
+}
