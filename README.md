@@ -1,6 +1,17 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="author" content="@egirlcatnip" />
+</head>
+
+
 # egirlcatnip (she/her)
 
-![Rainbow Heart](resources/hearts/rainbow.png) ![Trans Heart](resources/hearts/trans.png) ![Lesbian Heart](resources/hearts/lesbian.png) ![Bi Heart](resources/hearts/bi.png) ![Sapphic Heart](resources/hearts/sapphic.png)
+![Rainbow](resources/hearts/rainbow.png)
+![Transgender](resources/hearts/trans.png)
+![Transfemme](resources/hearts/transfemme.png)
+![Sapphic](resources/hearts/sapphic.png)
+![Lesbian](resources/hearts/lesbian.png)
+![Bisexual](resources/hearts/bi.png)
 
 ---
 
@@ -51,4 +62,7 @@ I play Minecraft and The Binding of Isaac.
 
 ---
 
-@egirlcatnip 2025 v1.6 (3. 3. 2025)
+@egirlcatnip 2025 v1.7 (3. 4. 2025)
+
+</html>
+
