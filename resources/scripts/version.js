@@ -1,6 +1,10 @@
+function createDate(day, month, year) {
+  return new Date(year, month - 1, day);
+}
+
 function version() {
-  const versionDate = new Date(2025, 3, 3);
-  const version = "v1.6";
+  const versionDate = createDate(4, 3, 2025);
+  const version = "v1.7";
 
   const span = document.getElementById("version");
 
@@ -9,7 +13,7 @@ function version() {
 
     span.addEventListener("mouseenter", function () {
       const dateSpan = document.createElement("span");
-      const formattedDate = `${versionDate.getDate()}. ${versionDate.getMonth()
+      const formattedDate = `${versionDate.getDate()}. ${versionDate.getMonth() + 1
         }. ${versionDate.getFullYear()}`;
       dateSpan.textContent = ` (${formattedDate})`;
       dateSpan.id = "version-info";

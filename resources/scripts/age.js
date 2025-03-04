@@ -1,5 +1,9 @@
+function createDate(day, month, year) {
+  return new Date(year, month - 1, day);
+}
+
 function age() {
-  const birthDate = new Date(2005, 3, 29); // April is month 3 (zero-indexed)
+  const birthDate = createDate(29, 4, 2005);
   const span = document.getElementById("age");
 
   if (span) {
