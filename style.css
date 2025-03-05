@@ -1,12 +1,15 @@
 :root {
   --font: "Atkinson Hyperlegible Next";
-  --yellow: #E9AD0C;
-  --dark_yellow: #A2734C;
-  --purple: #C061CB;
+
   --bg-light: #ffffff;
-  --bg-dark: #1e1e1e;
   --text-light: #1e1e1e;
+
+  --bg-dark: #1e1e1e;
   --text-dark: #CFCFCF;
+
+  --yellow: #E9AD0C;
+  --purple: #C061CB;
+
 
   --accent: var(--yellow);
   --secondary: var(--purple);
