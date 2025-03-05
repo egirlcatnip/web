@@ -3,8 +3,8 @@ function createDate(day, month, year) {
 }
 
 function version() {
-  const versionDate = createDate(4, 3, 2025);
-  const version = "v1.7";
+  const versionDate = createDate(5, 3, 2025);
+  const version = "v1.8";
 
   const span = document.getElementById("version");
 
