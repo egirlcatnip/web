@@ -1,9 +1,5 @@
-function createDate(day, month, year) {
-  return new Date(year, month - 1, day);
-}
-
 function version() {
-  const versionDate = createDate(5, 3, 2025);
+  const versionDate = new Date("2025-05-03");
   const version = "v1.8";
 
   const span = document.getElementById("version");

@@ -1,9 +1,5 @@
-function createDate(day, month, year) {
-  return new Date(year, month - 1, day);
-}
-
 function age() {
-  const birthDate = createDate(29, 4, 2005);
+  const birthDate = new Date("2005-04-29");
   const span = document.getElementById("age");
 
   if (span) {
