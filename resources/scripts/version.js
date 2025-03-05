@@ -1,11 +1,9 @@
-function version(version_string) {
-  const versionDate = new Date("2025-05-03");
-  const version = version_string;
-
+function version(version_string, date) {
+  const versionDate = new Date(date);
   const span = document.getElementById("version");
 
   if (span) {
-    span.textContent = version;
+    span.textContent = `v${version_string}`;
 
     span.addEventListener("mouseenter", function () {
       const dateSpan = document.createElement("span");

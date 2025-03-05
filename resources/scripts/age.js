@@ -1,5 +1,5 @@
-function age() {
-  const birthDate = new Date("2005-04-29");
+function age(date) {
+  const birthDate = new Date(date);
   const span = document.getElementById("age");
 
   if (span) {
