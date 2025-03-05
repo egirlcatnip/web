@@ -1,6 +1,6 @@
-function version() {
+function version(version_string) {
   const versionDate = new Date("2025-05-03");
-  const version = "v1.8";
+  const version = version_string;
 
   const span = document.getElementById("version");
 
